@@ -18,12 +18,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from myblog import views as blogviews
 
-from . views import *
+from . import views
 
 
 urlpatterns = [
-    path('', index),
-    path('blog/', blog),
+    path('', views.index),
+    path('blog/', views.blog),
+    path('myblog/', blogviews.index),
     path('admin/', admin.site.urls),
 ]
